@@ -1,0 +1,324 @@
+:root {
+    --bg: #e0e0e0;
+    --titre: #645e5e;
+    --text: gray;
+    --tile-bg: #e0e0e0;
+    --shadow-light: #ffffff;
+    --shadow-dark: #afafaf;
+    --shadow-indi: #996dc2;
+}
+
+
+/*mode sombre*/
+body.dark {
+    --bg: #212121;
+    --titre: #b2eccf;
+    --text: whitesmoke;
+    --tile-bg: #212121;
+    --shadow-light: #282828;
+    --shadow-dark: #1a1a1a;
+    --shadow-indi: #ffd13d;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--bg);
+
+}
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "menu header header"
+        "menu content content"
+        "menu content content"
+        "footer footer footer";
+    grid-template-columns: 30% 1fr 1fr;
+    grid-template-rows: 70px 1fr 1fr 60px;
+    gap: 20px;
+    padding: 25px;
+    padding-bottom: 1px;
+}
+
+.line-1{
+    font-style: normal;
+    color: var(--titre);
+    position: relative;
+    top: 50%;  
+    width: 24em;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 280%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+    font-family: "Gothic";
+    margin-left: 15px;
+}
+
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 1s steps(10) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 11.5em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: var(--titre);}
+  to{border-right-color: transparent;}
+}
+
+@media (max-width: 768px) {
+    .tagline {
+        display: none;
+    }
+}
+.header{
+    padding: 10px;
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    border-radius: 30px;
+    overflow: hidden;
+    background: var(--bg);
+    box-shadow: inset 25px 25px 59px var(--shadow-dark),
+            inset -25px -25px 59px var(--shadow-light);
+}
+
+
+.content {
+  background-color: white;
+  border-radius: 16px;
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+}
+.container div.menu {
+    padding: 10px;
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    border-radius: 30px;
+    background: var(--bg);
+    box-shadow: inset 25px 25px 59px var(--shadow-dark),
+                inset -25px -25px 59px var(--shadow-light);
+}
+
+.container div.content {
+  grid-area: content;
+  background-color: black;
+}
+.container div.footer {
+  grid-area: footer;
+  text-align: center;  
+}
+
+.container div.menu::-webkit-scrollbar{
+    display: none;
+}
+.tile::-webkit-scrollbar{
+    display: none;
+}
+
+.tile {
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 20px;
+    min-height: 420px;
+    border-radius: 20px;
+    background: var(--bg);
+    box-shadow: 5px 5px 8px var(--shadow-dark),
+                -5px -5px 8px var(--shadow-light);
+    transition: 0.4s;
+}
+
+.tile-title {
+  font-size: 45px;
+  font-weight: 600;
+  color: var(--titre);
+  margin: 15px 0 0 10px;
+  font-family: "Gothic";
+}
+
+.tile-image {
+  min-height: 170px;
+  background-color: var(--bg);
+  border-radius: 15px;
+  background: var(--bg);
+  box-shadow: inset 5px 5px 3px var(--shadow-dark),
+            inset -5px -5px 3px var(--shadow-light);
+}
+
+.tile-body {
+  margin: 13px 0 0 10px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.tile-footer {
+  float: right;
+  margin: 28px 0 0 18px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.tile-by-name {
+  font-weight: 700;
+}
+
+.footer {
+    padding: 0 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw 8px 2vw;
+}
+
+.footer h4,
+.footer p {
+    margin: 0;
+    color: var(--text);
+}
+
+
+.reseau a {
+  transition: 0.4s;
+  color: var(--text)
+}
+
+.socialbar {
+  width: 230px;
+  background-color: var(--bg);
+  border-radius: 3em;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  color: var(--text);
+  box-shadow: 3px 3px 15px var(--shadow-dark),
+                   -3px -3px 15px var(--shadow-light);
+}
+
+#github:hover {
+  color: #c9510c;
+}
+
+#instagram:hover {
+  color: #d62976;
+}
+
+#facebook:hover {
+  color: #3b5998;
+}
+
+#discord:hover {
+  color: #5865f2;
+}
+
+.droit{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bundle {
+    display: flex;
+    align-items: center; 
+    gap: 8px; 
+}
+
+.bundle h4 {
+    margin: 0; 
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.logo_ico {
+    display: block; 
+    transform: translateY(-4px);
+}
+
+button {
+    width: 230px;
+    width: 100%;
+    color: var(--text);
+    padding: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 18px;
+    border-radius: 3em;
+    background: var(--bg);
+    cursor: pointer;
+    border: 1px solid var(--bg);
+    transition: all 0.1s;
+    box-shadow:
+        6px 6px 12px var(--shadow-dark),
+        -6px -6px 12px var(--shadow-light);
+}
+
+button:active {
+  color: var(--titre);
+  box-shadow:
+    0px 0px 0px var(--shadow-dark),
+    0px 0px 0px var(--shadow-light),
+    inset 4px 4px 12px var(--shadow-dark),
+    inset -4px -4px 12px var(--shadow-light);
+}
+.label {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 30px;
+    height: 50px;
+    border-radius: 50px;
+    background: var(--bg);
+    box-shadow: 
+        inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+}
+.toggle p {
+  margin: 3px;
+}
+
+.toggle-state {
+    display: none;
+}
+
+.indicator {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow: 0px 0px 3px 3px var(--shadow-indi);
+    transition: 0.3s;
+}
+
+.toggle-state:checked + .indicator {
+    transform: translateY(23px);
+}
