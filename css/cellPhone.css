@@ -154,10 +154,7 @@ html, body {
                 -5px -5px 8px var(--shadow-light);
     transition: 0.4s;
 }
-.tile:hover{
-    transform: scale(1.01);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-}
+
 
 .tile-title {
   font-size: 45px;

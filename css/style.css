@@ -99,8 +99,13 @@ html, body {
 
 
 .content {
-  background-color: white;
   border-radius: 16px;
+  scroll-behavior: smooth;
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: inset 25px 25px 59px var(--shadow-dark),
+              inset -25px -25px 59px var(--shadow-light);
 }
 .container div.header {
   grid-area: header;
@@ -123,7 +128,7 @@ html, body {
 
 .container div.content {
   grid-area: content;
-  background-color: black;
+
 }
 .container div.footer {
   grid-area: footer;
@@ -150,6 +155,20 @@ html, body {
                 -5px -5px 8px var(--shadow-light);
     transition: 0.4s;
 }
+.tile-button{
+  width: 30%;
+  align-self: flex-end;
+}
+.tile-button span{
+    display: inline-block;
+    transform: translateX(-2em);
+    transition: transform 0.4s ease;
+}
+.tile-button:hover span{
+  transform: translateX(2em);
+}
+
+
 
 .tile-title {
   font-size: 45px;
@@ -167,7 +186,10 @@ html, body {
   box-shadow: inset 5px 5px 3px var(--shadow-dark),
             inset -5px -5px 3px var(--shadow-light);
 }
-
+#argos{
+  background-image: url("https://substackcdn.com/image/fetch/%24s_%21qbTE%21%2Cf_auto%2Cq_auto%3Agood%2Cfl_progressive%3Asteep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd8a54b3f-ec97-4929-ad6f-508036540374_1200x630.jpeg");
+  background-size: cover;
+}
 .tile-body {
   margin: 13px 0 0 10px;
   color: var(--text);
@@ -231,7 +253,7 @@ html, body {
 }
 
 #discord:hover {
-  color: #5865f2;
+  color: #8658f2;
 }
 
 .droit{
@@ -283,6 +305,7 @@ button:active {
     inset 4px 4px 12px var(--shadow-dark),
     inset -4px -4px 12px var(--shadow-light);
 }
+
 .label {
     display: inline-block;
     cursor: pointer;
@@ -321,4 +344,160 @@ button:active {
 
 .toggle-state:checked + .indicator {
     transform: translateY(23px);
+}
+
+.content div.c1{
+  opacity: 10;
+  display: grid;
+  grid-template-areas:
+     "cTitle console"
+     "explications console"
+      "check_mail console"
+      "check_button console";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr .3fr;
+  gap: 15px;
+  height: 100%;
+  padding: 15px;
+}
+.cTitle{
+  grid-area: cTitle;
+  text-align: center;
+  font-family: "Gothic";
+  font-size: 4em;
+  width: 100%;
+  scroll-behavior: smooth;
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: inset 25px 25px 59px var(--shadow-dark),
+            inset -25px -25px 59px var(--shadow-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cTitle h4{
+  margin: 0;
+  color: var(--titre);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.explications{
+  grid-area: explications;
+  padding: 2em;
+  border-radius: 30px;
+  background-color: var(--bg);
+  box-shadow: inset 25px 25px 59px var(--shadow-dark),
+            inset -25px -25px 59px var(--shadow-light);
+}
+.explications p{
+  color: var(--text);
+}
+
+.checkToMail{
+  grid-area: check_mail;
+}
+.email{
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: 25px 25px 59px var(--shadow-dark),
+             -25px -25px 59px var(--shadow-light);
+  color: var(--titre);
+
+}
+.checkButton{
+  grid-area: check_button;
+}
+.services_title{
+  align-self: center;
+  font-family: "Gothic";
+  font-size: 2em;
+  font-style: italic;
+  color: var(--titre);
+}
+
+.console{
+  grid-area: console;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  background-color: var(--bg);
+  box-shadow: inset 25px 25px 59px var(--shadow-dark),
+            inset -25px -25px 59px var(--shadow-light);
+  padding: 1em;
+  overflow-y: scroll;
+}
+.console::-webkit-scrollbar{
+  display: none;
+}
+
+.check_console input {
+  position: absolute;
+  opacity: 0;
+  cursor: not-allowed;
+  height: 0;
+  width: 0;
+}
+
+.check_console {
+  display: block;
+  position: relative;
+  cursor: not-allowed;
+  font-size: 20px;
+  user-select: none;
+  width: 1em;
+}
+
+.checkbox {
+  background-color: transparent;
+  padding: 12px;
+  border-radius: 5px;
+  border: grey solid 2px;
+  box-shadow:
+    4px 4px 9px var(--shadow-dark),
+    inset 2px 2px 5px var(--shadow-dark),
+    -1px -1px 5px var(--shadow-light),
+    inset -1px -1px 5px var(--shadow-light);
+  outline: none;
+}
+
+.check_console input:checked ~ .checkbox {
+  background-color: transparent;
+}
+.checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.check_console input:checked ~ .checkbox:after {
+  display: block;
+}
+
+.check_console .checkbox:after {
+  left: 0.52em;
+  top: 0.28em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid green;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+.console_items{
+  display: flex;
+  flex-direction: row;
+  padding-top: .5em;
+}
+.services{
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+  cursor: not-allowed;
+  color: var(--text);
 }
