@@ -1,11 +1,12 @@
 :root {
   --bg: #e0e0e0;
   --titre: #645e5e;
-  --text: gray;
+  --text: rgb(71, 71, 71);
   --tile-bg: #e0e0e0;
   --shadow-light: #ffffff;
   --shadow-dark: #afafaf;
   --shadow-indi: #996dc2;
+  --visited: ;
 }
 
 
@@ -18,6 +19,7 @@ body.dark {
   --shadow-light: #313131;
   --shadow-dark: #1a1a1a;
   --shadow-indi: #ffd13d;
+  --visited: ;
 }
 
 
@@ -166,12 +168,12 @@ html, body {
 }
 
 .tile {
-  margin: 10px 10px;
+  margin: 12px 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 20px;
-  min-height: 420px;
+  min-height: auto;
   border-radius: 20px;
   background: var(--bg);
   box-shadow: 5px 5px 8px var(--shadow-dark),
@@ -288,7 +290,7 @@ html, body {
 }
 
 #discord:hover {
-  color: #8658f2;
+  color: #5865F2;
 }
 
 .droit {
@@ -412,6 +414,10 @@ button:active {
   font-style: oblique;
 }
 
+.c0 h4 {
+  cursor: none;
+}
+
 .content div.c1 {
   display: grid;
   grid-template-areas:
@@ -431,6 +437,8 @@ button:active {
   grid-template-areas:
     "cTitle console"
     "explications console"
+    "check_user console"
+    "separator console"
     "check_mail console"
     "check_button console";
   grid-template-columns: 1fr 1fr;
@@ -438,6 +446,27 @@ button:active {
   gap: 15px;
   height: 100%;
   padding: 15px;
+}
+
+.separator {
+  grid-area: separator;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--titre);
+  font-weight: bold;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--titre);
+}
+
+.separator span {
+  padding: 0 15px;
 }
 
 .cTitle {
@@ -478,8 +507,25 @@ button:active {
   color: var(--text);
 }
 
+.checkToUser {
+  grid-area: check_user;
+}
+
 .checkToMail {
   grid-area: check_mail;
+}
+
+.userCheck {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: 25px 25px 59px var(--shadow-dark),
+    -25px -25px 59px var(--shadow-light);
+  color: var(--titre);
 }
 
 .email {
@@ -515,7 +561,7 @@ button:active {
   background-color: var(--bg);
   box-shadow: inset 25px 25px 59px var(--shadow-dark),
     inset -25px -25px 59px var(--shadow-light);
-  padding: 1em;
+  padding: 2em;
   overflow-y: scroll;
 }
 
@@ -590,4 +636,70 @@ button:active {
   padding-left: 1em;
   cursor: not-allowed;
   color: var(--text);
+}
+
+.panel {
+  margin-top: 2em;
+  padding-bottom: 1em;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background: var(--bg);
+  box-shadow: 5px 5px 8px var(--shadow-dark),
+    -5px -5px 8px var(--shadow-light);
+}
+
+.panel .infos a:visited {
+  color: var(--shadow-indi);
+}
+
+.panel .domain_name {
+  margin: 0;
+  margin-top: -.6em;
+  margin-left: 1em;
+  color: var(--titre);
+  font-family: "Gothic";
+  font-size: 2em;
+}
+
+.panel p {
+  margin: 0;
+}
+
+.panel .url {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel .infos {
+  color: var(--text);
+  margin: .5em;
+}
+
+.panel .url a {
+  margin-left: 1em;
+}
+
+.panel .name_user {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel .email_user {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel .pass_user {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel .infos {
+  margin-left: 1em;
+}
+
+.panel .infos p {
+  margin-left: 1em;
+  margin-right: 1em;
 }
