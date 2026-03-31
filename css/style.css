@@ -1,174 +1,197 @@
 :root {
-    --bg: #e0e0e0;
-    --titre: #645e5e;
-    --text: gray;
-    --tile-bg: #e0e0e0;
-    --shadow-light: #ffffff;
-    --shadow-dark: #afafaf;
-    --shadow-indi: #996dc2;
+  --bg: #e0e0e0;
+  --titre: #645e5e;
+  --text: gray;
+  --tile-bg: #e0e0e0;
+  --shadow-light: #ffffff;
+  --shadow-dark: #afafaf;
+  --shadow-indi: #996dc2;
 }
 
 
 /*mode sombre*/
 body.dark {
-    --bg: #212121;
-    --titre: #b2eccf;
-    --text: whitesmoke;
-    --tile-bg: #212121;
-    --shadow-light: #282828;
-    --shadow-dark: #1a1a1a;
-    --shadow-indi: #ffd13d;
+  --bg: #212121;
+  --titre: #b2eccf;
+  --text: whitesmoke;
+  --tile-bg: #212121;
+  --shadow-light: #313131;
+  --shadow-dark: #1a1a1a;
+  --shadow-indi: #ffd13d;
 }
 
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 html, body {
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-    background-color: var(--bg);
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--bg);
 
 }
+
 .container {
-    height: 100vh;
-    display: grid;
-    grid-template-areas:
-        "menu header header"
-        "menu content content"
-        "menu content content"
-        "footer footer footer";
-    grid-template-columns: 30% 1fr 1fr;
-    grid-template-rows: 70px 1fr 1fr 60px;
-    gap: 20px;
-    padding: 25px;
-    padding-bottom: 1px;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "menu header header"
+    "menu content content"
+    "menu content content"
+    "footer footer footer";
+  grid-template-columns: 30% 1fr 1fr;
+  grid-template-rows: 70px 1fr 1fr 60px;
+  gap: 20px;
+  padding: 25px;
+  padding-bottom: .5em;
 }
 
-.line-1{
-    font-style: normal;
-    color: var(--titre);
-    position: relative;
-    top: 50%;  
-    width: 24em;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 280%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
-    font-family: "Gothic";
-    margin-left: 15px;
+.line-1 {
+  font-style: normal;
+  color: var(--titre);
+  position: relative;
+  top: 50%;
+  width: 24em;
+  border-right: 2px solid rgba(255, 255, 255, .75);
+  font-size: 280%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-family: "Gothic";
+  margin-left: 15px;
 }
 
-.anim-typewriter{
+.anim-typewriter {
   animation: typewriter 4s steps(44) 1s 1 normal both,
-             blinkTextCursor 1s steps(10) infinite normal;
+    blinkTextCursor 1s steps(10) infinite normal;
 }
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 11.5em;}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 11.5em;
+  }
 }
-@keyframes blinkTextCursor{
-  from{border-right-color: var(--titre);}
-  to{border-right-color: transparent;}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: var(--titre);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
 }
 
 @media (max-width: 768px) {
-    .tagline {
-        display: none;
-    }
+  .tagline {
+    display: none;
+  }
 }
-.header{
-    padding: 10px;
-    grid-area: menu;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    border-radius: 30px;
-    overflow: hidden;
-    background: var(--bg);
-    box-shadow: inset 25px 25px 59px var(--shadow-dark),
-            inset -25px -25px 59px var(--shadow-light);
+
+.header {
+  padding: 10px;
+  grid-area: menu;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: inset 25px 25px 59px var(--shadow-dark),
+    inset -25px -25px 59px var(--shadow-light);
 }
 
 
 .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
   border-radius: 16px;
   scroll-behavior: smooth;
   border-radius: 30px;
   overflow: hidden;
   background: var(--bg);
   box-shadow: inset 25px 25px 59px var(--shadow-dark),
-              inset -25px -25px 59px var(--shadow-light);
+    inset -25px -25px 59px var(--shadow-light);
 }
+
 .container div.header {
   grid-area: header;
   text-align: center;
 }
+
 .container div.menu {
-    padding: 10px;
-    grid-area: menu;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    border-radius: 30px;
-    background: var(--bg);
-    box-shadow: inset 25px 25px 59px var(--shadow-dark),
-                inset -25px -25px 59px var(--shadow-light);
+  padding: 10px;
+  grid-area: menu;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  border-radius: 30px;
+  background: var(--bg);
+  box-shadow: inset 25px 25px 59px var(--shadow-dark),
+    inset -25px -25px 59px var(--shadow-light);
 }
 
 .container div.content {
   grid-area: content;
 
 }
+
 .container div.footer {
   grid-area: footer;
-  text-align: center;  
+  text-align: center;
 }
 
-.container div.menu::-webkit-scrollbar{
-    display: none;
+.container div.menu::-webkit-scrollbar {
+  display: none;
 }
-.tile::-webkit-scrollbar{
-    display: none;
+
+.tile::-webkit-scrollbar {
+  display: none;
 }
 
 .tile {
-    margin: 10px 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 20px;
-    min-height: 420px;
-    border-radius: 20px;
-    background: var(--bg);
-    box-shadow: 5px 5px 8px var(--shadow-dark),
-                -5px -5px 8px var(--shadow-light);
-    transition: 0.4s;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 20px;
+  min-height: 420px;
+  border-radius: 20px;
+  background: var(--bg);
+  box-shadow: 5px 5px 8px var(--shadow-dark),
+    -5px -5px 8px var(--shadow-light);
 }
-.tile-button{
+
+.tile-button {
   width: 30%;
   align-self: flex-end;
 }
-.tile-button span{
-    display: inline-block;
-    transform: translateX(-2em);
-    transition: transform 0.4s ease;
+
+.tile-button span {
+  display: inline-block;
+  transform: translateX(-2em);
+  transition: transform 0.4s ease;
 }
-.tile-button:hover span{
+
+.tile-button:hover span {
   transform: translateX(2em);
 }
-
-
 
 .tile-title {
   font-size: 45px;
@@ -184,12 +207,24 @@ html, body {
   border-radius: 15px;
   background: var(--bg);
   box-shadow: inset 5px 5px 3px var(--shadow-dark),
-            inset -5px -5px 3px var(--shadow-light);
+    inset -5px -5px 3px var(--shadow-light);
 }
-#argos{
+
+#argos {
   background-image: url("https://substackcdn.com/image/fetch/%24s_%21qbTE%21%2Cf_auto%2Cq_auto%3Agood%2Cfl_progressive%3Asteep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd8a54b3f-ec97-4929-ad6f-508036540374_1200x630.jpeg");
   background-size: cover;
 }
+
+#promethe {
+  background-image: url();
+  background-size: cover;
+}
+
+#medusa {
+  background-image: url("/image/e6c9ec31-3b3d-4594-a939-8bcf4f01c44b.png");
+  background-size: cover;
+}
+
 .tile-body {
   margin: 13px 0 0 10px;
   color: var(--text);
@@ -208,17 +243,17 @@ html, body {
 }
 
 .footer {
-    padding: 0 2vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2vw 8px 2vw;
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw 8px 2vw;
 }
 
 .footer h4,
 .footer p {
-    margin: 0;
-    color: var(--text);
+  margin: 0;
+  color: var(--text);
 }
 
 
@@ -237,7 +272,7 @@ html, body {
   margin-top: 15px;
   color: var(--text);
   box-shadow: 3px 3px 15px var(--shadow-dark),
-                   -3px -3px 15px var(--shadow-light);
+    -3px -3px 15px var(--shadow-light);
 }
 
 #github:hover {
@@ -256,45 +291,44 @@ html, body {
   color: #8658f2;
 }
 
-.droit{
-    display: flex;
-    justify-content: flex-end;
+.droit {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .bundle {
-    display: flex;
-    align-items: center; 
-    gap: 8px; 
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .bundle h4 {
-    margin: 0; 
-    display: flex;
-    align-items: center;
-    line-height: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .logo_ico {
-    display: block; 
-    transform: translateY(-4px);
+  display: block;
+  transform: translateY(-4px);
 }
 
 button {
-    width: 230px;
-    width: 100%;
-    color: var(--text);
-    padding: 15px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    font-size: 18px;
-    border-radius: 3em;
-    background: var(--bg);
-    cursor: pointer;
-    border: 1px solid var(--bg);
-    transition: all 0.1s;
-    box-shadow:
-        6px 6px 12px var(--shadow-dark),
-        -6px -6px 12px var(--shadow-light);
+  width: 230px;
+  width: 100%;
+  color: var(--text);
+  padding: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 18px;
+  border-radius: 3em;
+  background: var(--bg);
+  cursor: pointer;
+  border: 1px solid var(--bg);
+  box-shadow:
+    6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
 }
 
 button:active {
@@ -307,60 +341,106 @@ button:active {
 }
 
 .label {
-    display: inline-block;
-    cursor: pointer;
-    margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .toggle {
-    position: relative;
-    width: 30px;
-    height: 50px;
-    border-radius: 50px;
-    background: var(--bg);
-    box-shadow: 
-        inset 4px 4px 8px var(--shadow-dark),
-        inset -4px -4px 8px var(--shadow-light);
+  position: relative;
+  width: 30px;
+  height: 50px;
+  border-radius: 50px;
+  background: var(--bg);
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
 }
+
 .toggle p {
   margin: 3px;
 }
 
 .toggle-state {
-    display: none;
+  display: none;
 }
 
 .indicator {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 24px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--bg);
-    box-shadow: 0px 0px 3px 3px var(--shadow-indi);
-    transition: 0.3s;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg);
+  box-shadow: 0px 0px 3px 3px var(--shadow-indi);
+  transition: 0.3s;
 }
 
-.toggle-state:checked + .indicator {
-    transform: translateY(23px);
+.toggle-state:checked+.indicator {
+  transform: translateY(23px);
 }
 
-.content div.c1{
-  opacity: 10;
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* caché */
+  pointer-events: none;
+  /* empêche les clics */
+  transition: opacity 0.4s ease;
+}
+
+.section.active {
+  opacity: 1;
+  /* visible */
+  pointer-events: auto;
+}
+
+.c0 {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gothic";
+  color: var(--titre);
+  font-size: 6em;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
+.content div.c1 {
   display: grid;
   grid-template-areas:
-     "cTitle console"
-     "explications console"
-      "check_mail console"
-      "check_button console";
+    "cTitle console"
+    "explications console"
+    "check_mail console"
+    "check_button console";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 3fr .3fr;
   gap: 15px;
   height: 100%;
   padding: 15px;
 }
-.cTitle{
+
+.content div.c2 {
+  display: grid;
+  grid-template-areas:
+    "cTitle console"
+    "explications console"
+    "check_mail console"
+    "check_button console";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 3fr .3fr;
+  gap: 15px;
+  height: 100%;
+  padding: 15px;
+}
+
+.cTitle {
   grid-area: cTitle;
   text-align: center;
   font-family: "Gothic";
@@ -371,34 +451,38 @@ button:active {
   overflow: hidden;
   background: var(--bg);
   box-shadow: inset 25px 25px 59px var(--shadow-dark),
-            inset -25px -25px 59px var(--shadow-light);
+    inset -25px -25px 59px var(--shadow-light);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cTitle h4{
+
+.cTitle h4 {
   margin: 0;
   color: var(--titre);
   display: flex;
   align-items: center;
   line-height: 1;
 }
-.explications{
+
+.explications {
   grid-area: explications;
   padding: 2em;
   border-radius: 30px;
   background-color: var(--bg);
   box-shadow: inset 25px 25px 59px var(--shadow-dark),
-            inset -25px -25px 59px var(--shadow-light);
+    inset -25px -25px 59px var(--shadow-light);
 }
-.explications p{
+
+.explications p {
   color: var(--text);
 }
 
-.checkToMail{
+.checkToMail {
   grid-area: check_mail;
 }
-.email{
+
+.email {
   background: none;
   border: none;
   outline: none;
@@ -407,14 +491,15 @@ button:active {
   font-size: 16px;
   border-radius: 9999px;
   box-shadow: 25px 25px 59px var(--shadow-dark),
-             -25px -25px 59px var(--shadow-light);
+    -25px -25px 59px var(--shadow-light);
   color: var(--titre);
-
 }
-.checkButton{
+
+.checkButton {
   grid-area: check_button;
 }
-.services_title{
+
+.services_title {
   align-self: center;
   font-family: "Gothic";
   font-size: 2em;
@@ -422,18 +507,19 @@ button:active {
   color: var(--titre);
 }
 
-.console{
+.console {
   grid-area: console;
   display: flex;
   flex-direction: column;
   border-radius: 30px;
   background-color: var(--bg);
   box-shadow: inset 25px 25px 59px var(--shadow-dark),
-            inset -25px -25px 59px var(--shadow-light);
+    inset -25px -25px 59px var(--shadow-light);
   padding: 1em;
   overflow-y: scroll;
 }
-.console::-webkit-scrollbar{
+
+.console::-webkit-scrollbar {
   display: none;
 }
 
@@ -467,15 +553,17 @@ button:active {
   outline: none;
 }
 
-.check_console input:checked ~ .checkbox {
+.check_console input:checked~.checkbox {
   background-color: transparent;
 }
+
 .checkbox:after {
   content: "";
   position: absolute;
   display: none;
 }
-.check_console input:checked ~ .checkbox:after {
+
+.check_console input:checked~.checkbox:after {
   display: block;
 }
 
@@ -488,12 +576,14 @@ button:active {
   border-width: 0 0.15em 0.15em 0;
   transform: rotate(45deg);
 }
-.console_items{
+
+.console_items {
   display: flex;
   flex-direction: row;
   padding-top: .5em;
 }
-.services{
+
+.services {
   align-self: center;
   margin: 0;
   padding: 0;
