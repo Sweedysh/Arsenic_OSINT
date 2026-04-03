@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="fonts/fontStyle.css">
     <link rel="stylesheet" href="css/style.css">
     <!--<link rel="stylesheet" href="css/light_style.css">-->
-    <link rel="stylesheet" media="screen and (max-width: 950px)" href="css/cellPhone.css">
+    <!--<link rel="stylesheet" media="screen and (max-width: 950px)" href="css/cellPhone.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/image/logo_light.ico">
     <title>𝔄𝔯𝔰𝔢𝔫𝔦𝔠</title>
@@ -14,7 +14,7 @@
 
 
     <div class="container">
-        <div class="header">
+        <header>
             <h1 class="line-1 anim-typewriter">
                 <span class="brand">Arsenic</span>
                 <span class="tagline"> – Creation and innovation</span>
@@ -27,10 +27,10 @@
                     
                 </div>
             </label>
-        </div>
+        </header>
 
         
-        <div class="menu">
+        <nav>
             <div class="tile">
             <div class="tile-image" id="argos"></div>
             <p class="tile-title">Árgus Ⅰ․</p>
@@ -39,7 +39,6 @@
                 Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.
-            
             </p>
             <p class="tile-footer">Last update by <span class="tile-by-name">Philippe Sweeney</span> on <span class="date">25/05/23</span></p>
             <button class="tile-button" onclick="showC1()"><span>Go to</span></button>
@@ -85,7 +84,7 @@
             </p>
             <p class="tile-footer">Written by <span class="tile-by-name">John Doe</span> on <span class="date">25/05/23</span></p>
             </div>
-        </div>
+        </nav>
         <div class="content">
             <div class="c0 section active">
                 <h4>Select a tool</h4>
@@ -359,8 +358,8 @@
                     </div>
                 </div>
             </div>
-            <div class="c2 section" id="show_C2">
-                                <div class="cTitle">
+            <div class="c2 section" id="show_C2" id="top">
+                    <div class="cTitle">
                     <h4>Promethe</h4>
                 </div>
                 <div class="explications">
@@ -464,12 +463,13 @@
                         <div class="email_user infos">Email: <p>jamesharju00@gmail.com</p></div>
                         <div class="pass_user infos">Password: <p>012723986</p></div>
                     </div>
+                    <button id="backToTop"><a href="#top">&#9650Back to top&#9650</a></button>
                 </div>
             </div>
             <div class="c3 section" id="show_C3"></div>
             <div class="c4 section" id="show_C4"></div>
         </div>
-            <div class="footer">
+            <footer>
                 <div class="reseau">
                     <div class="socialbar">
                         <a id="github" href="https://github.com/Sweedysh"><svg viewBox="0 0 16 16" class="bi bi-github" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -497,7 +497,7 @@
                     <img class="logo_ico" src="/image/logo_light.png" alt="Logo_Arsenic_light" width="30" height="30">
                 </button>
             </div>
-        </div>
+            </footer>
     </div>
     <script src="script.js"></script>
 </body>

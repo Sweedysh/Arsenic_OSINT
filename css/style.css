@@ -50,6 +50,7 @@ html, body {
   padding-bottom: .5em;
 }
 
+
 .line-1 {
   font-style: normal;
   color: var(--titre);
@@ -91,15 +92,9 @@ html, body {
   }
 }
 
-@media (max-width: 768px) {
-  .tagline {
-    display: none;
-  }
-}
 
-.header {
+header {
   padding: 10px;
-  grid-area: menu;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -119,7 +114,6 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-
   border-radius: 16px;
   scroll-behavior: smooth;
   border-radius: 30px;
@@ -129,12 +123,12 @@ html, body {
     inset -25px -25px 59px var(--shadow-light);
 }
 
-.container div.header {
+.container header {
   grid-area: header;
   text-align: center;
 }
 
-.container div.menu {
+.container nav {
   padding: 10px;
   grid-area: menu;
   display: flex;
@@ -154,12 +148,12 @@ html, body {
 
 }
 
-.container div.footer {
+.container footer {
   grid-area: footer;
   text-align: center;
 }
 
-.container div.menu::-webkit-scrollbar {
+.container nav::-webkit-scrollbar {
   display: none;
 }
 
@@ -218,7 +212,7 @@ html, body {
 }
 
 #promethe {
-  background-image: url();
+  background-image: url("");
   background-size: cover;
 }
 
@@ -244,7 +238,7 @@ html, body {
   font-weight: 700;
 }
 
-.footer {
+footer {
   padding: 0 2vw;
   display: flex;
   justify-content: space-between;
@@ -252,8 +246,8 @@ html, body {
   padding: 0 2vw 8px 2vw;
 }
 
-.footer h4,
-.footer p {
+footer h4,
+footer p {
   margin: 0;
   color: var(--text);
 }
@@ -404,7 +398,7 @@ button:active {
 
 .c0 {
   display: flex;
-  align-content: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Gothic";
@@ -412,6 +406,7 @@ button:active {
   font-size: 6em;
   text-decoration: underline;
   font-style: oblique;
+  text-align: center;
 }
 
 .c0 h4 {
@@ -702,4 +697,92 @@ button:active {
 .panel .infos p {
   margin-left: 1em;
   margin-right: 1em;
+}
+
+#backToTop {
+  display: none;
+}
+
+@media (max-width: 925px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "content"
+      "menu"
+      "footer";
+    grid-template-columns: 100%;
+    gap: 20px;
+    padding: 25px;
+    padding-bottom: 1px;
+  }
+
+  .tile {
+    height: auto;
+  }
+
+  .content div.c1 {
+    display: grid;
+    grid-template-areas:
+      "cTitle"
+      "explications"
+      "check_mail"
+      "check_button"
+      "console";
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    gap: 15px;
+    height: 100%;
+    padding: 15px;
+    overflow-x: scroll;
+  }
+
+  .cTitle {
+    min-height: 100px;
+  }
+
+
+  .content div.c2 {
+    display: grid;
+    grid-template-areas:
+      "cTitle"
+      "explications"
+      "check_user"
+      "separator"
+      "check_mail"
+      "check_button"
+      "console";
+    grid-template-columns: 100%;
+    gap: 15px;
+    height: 100%;
+    padding: 15px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  #backToTop {
+    display: block;
+  }
+
+  .content {
+    min-width: auto;
+  }
+
+  .console {
+    grid-area: console;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    min-height: 400px;
+    overflow-y: scroll;
+  }
+
+  .tile-button {
+    width: 9em;
+    margin-top: 1em;
+  }
+
+  .tagline {
+    display: none;
+  }
 }
